@@ -1,7 +1,8 @@
 # Tracking via Template Matching (with CUDA) 
 ## Description
-To demonstrate my skills with CUDA I decided to implement a template 
-matching tracking algorithm. On each new frame, the tracker takes the 
+To demonstrate my skills with CUDA I've put together a small tracking algorithm 
+based on template matching. Included is a sequence of images with a car
+driving along a country road. On each new frame, the tracker takes the 
 detected car ROI from the last frame and template matches it in the new 
 frame. The pixel location with the best match score becomes the new origin
 for the car's bounding box.
@@ -10,6 +11,12 @@ Some glaring issues with my implementation are that the size of the
 bounding box region never changes and it is not robust to occlusions, 
 however it works pretty well in the beginning of the sequence and is a 
 nice function to implement with GPU parallelization.
+
+## Running it
+From command line:
+```
+> template_tracker.exe <IMAGEDIR>
+```
 
 ## Future work
 With more time, I would have liked to implement a reduction algorithm for
@@ -23,7 +30,7 @@ the image sizes don't change.
 ## Compiling
 Unfortunately I'm not familiar with building my own CUDA projects on Linux,
 so I built this tracker project in Visual Studio 2013. I've 
-included a pre-built *.exe* file as well as all my source code and VS project
+included a pre-built .exe file as well as all my source code and VS project
 files, so hopefully that's enough to get it going. (I built for Release x64.)
     
 ## Dependencies
@@ -33,5 +40,5 @@ Libs used:
 * opencv_imgproc310.lib
 * opencv_imgcodecs310.lib
 
-CUDA
+CUDA:
 * Version 7.5
