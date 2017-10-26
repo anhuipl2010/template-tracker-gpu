@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 {
 	// parse input params
 	if (argc != 2) {
-		std::cout << "USAGE: uber_project.exe IMAGE_DIRECTORY" << std::endl;
+		std::cout << "USAGE: template_tracker.exe IMAGE_DIRECTORY" << std::endl;
 		return -1;
 	}
 	else {
